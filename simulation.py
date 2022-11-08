@@ -36,6 +36,7 @@ def simulation(t, e):
     average_regret_explore = optimum_happiness-average_explore
     average_regret_exploit = optimum_happiness-average_exploit
     average_regret_eGreedy = optimum_happiness-average_eGreedy
+    
     #prints everything
     print("Explore Only:")
     print('Expected Happiness: ' + explore_expected_happiness)
