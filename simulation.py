@@ -1,7 +1,11 @@
+from exploit import exploitOnly
+from explore import exploreOnly
+from eGreedy import eGreedy
+
 def simulation(t, e):
     c1_h = 10
     c2_h = 15
-    c3_h = 13
+    c3_h = 12
     days = 300
 
     optimum_happiness = c2_h*days
@@ -17,7 +21,6 @@ def simulation(t, e):
     #eGreedy
     percent = ((100-e)/100)
     smaller_percent = (1-percent)/3
-    print(smaller_percent)
     eGreedy_expected_happiness = percent*days*c2_h + smaller_percent*days*c1_h + smaller_percent*days*c2_h + smaller_percent*days*c3_h
     eGreedy_expected_regret = optimum_happiness-eGreedy_expected_happiness
 
@@ -36,20 +39,20 @@ def simulation(t, e):
     average_regret_explore = optimum_happiness-average_explore
     average_regret_exploit = optimum_happiness-average_exploit
     average_regret_eGreedy = optimum_happiness-average_eGreedy
-    
+
     #prints everything
     print("Explore Only:")
-    print('Expected Happiness: ' + explore_expected_happiness)
-    print('Expected Regret: ' + explore_expected_regret)
-    print('Average happiness for ' + t + ' trials: ' + average_explore)
-    print('Average regret for ' + t + ' trials: ' + average_regret_explore)
+    print('Expected Happiness: ' + explore_expected_happiness.__str__())
+    print('Expected Regret: ' + explore_expected_regret.__str__())
+    print('Average happiness for ' + t.__str__() + ' trials: ' + average_explore.__str__())
+    print('Average regret for ' + t.__str__() + ' trials: ' + average_regret_explore.__str__())
     print("Explot Only:")
-    print('Expected Happiness: ' + exploit_expected_happiness)
-    print('Expected Regret: ' + exploit_expected_regret)
-    print('Average happiness for ' + t + ' trials: ' + average_exploit)
-    print('Average regret for ' + t + ' trials: ' + average_regret_exploit)
+    print('Expected Happiness: ' + exploit_expected_happiness.__str__())
+    print('Expected Regret: ' + exploit_expected_regret.__str__())
+    print('Average happiness for ' + t.__str__() + ' trials: ' + average_exploit.__str__())
+    print('Average regret for ' + t.__str__() + ' trials: ' + average_regret_exploit.__str__())
     print("eGreedy:")
-    print('Expected Happiness: ' + eGreedy_expected_happiness)
-    print('Expected Regret: ' + eGreedy_expected_regret)
-    print('Average happiness for ' + t + ' trials: ' + average_eGreedy)
-    print('Average regret for ' + t + ' trials: ' + average_regret_eGreedy)
+    print('Expected Happiness: ' + eGreedy_expected_happiness.__str__())
+    print('Expected Regret: ' + eGreedy_expected_regret.__str__())
+    print('Average happiness for ' + t.__str__() + ' trials: ' + average_eGreedy.__str__())
+    print('Average regret for ' + t.__str__() + ' trials: ' + average_regret_eGreedy.__str__())
