@@ -13,9 +13,11 @@ def eGreedy(e: int):
     count1, count2, count3 = 1, 1, 1
     cur_best = 0
 
+    for day in range(297):
+        cur_best = max(C1, C2, C3)
 
-    for day in range(300):
         x = random.random()
+
         if x <= e:
             i = random.randint(1, 3)
             if i == 1:
@@ -27,7 +29,7 @@ def eGreedy(e: int):
                 AvgC2 = C2 / count2
                 count2 += 1
             else:
-                AvgC3 += random.normalvariate(H3, D3)
+                C3 += random.normalvariate(H3, D3)
                 AvgC3 = C3 / count3
                 count3 += 1
             cur_best = max(C1, C2, C3)
@@ -44,12 +46,10 @@ def eGreedy(e: int):
                 C3 += random.normalvariate(H3, D3)
                 AvgC3 = C3 / count3
                 count3 += 1
-
             cur_best = max(C1, C2, C3)
-
-    print(C1 + C2 + C3)
 
     return C1 + C2 + C3
 
 
 eGreedy(30)
+
